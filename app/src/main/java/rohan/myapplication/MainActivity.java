@@ -12,12 +12,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button0 , button1 , button2 , button3 , button4 , button5 , button6 ,
+        public Button button0 , button1 , button2 , button3 , button4 , button5 , button6 ,
                 button7 , button8 , button9 , buttonAdd , buttonSub , buttonDivision ,
                 buttonMul , button10 , buttonC , buttonEqual ;
-        EditText edt1;
-        float mValueOne, mValueTwo;
-        boolean Add,Sub,Div,Mul;
+        public EditText edt1;
+        public float mValueOne, mValueTwo;
+        public boolean Add,Sub,Div,Mul;
 
         button0 =(Button) findViewById(R.id.button0);
         button1 = (Button) findViewById(R.id.button1);
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mValueOne=Float.parseFloat(edt1.getText()+"");
                 Div=true;
-                edt1.setText();
+                edt1.setText(null);
             }
         });
         buttonEqual.setOnClickListener(new View.OnClickListener() {
