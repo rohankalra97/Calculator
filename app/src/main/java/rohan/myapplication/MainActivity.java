@@ -8,16 +8,17 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    public Button button0 , button1 , button2 , button3 , button4 , button5 , button6 ,
+            button7 , button8 , button9 , buttonAdd , buttonSub , buttonDivision ,
+            buttonMul , button10 , buttonC , buttonEqual ;
+    public EditText edt1;
+    public float mValueOne, mValueTwo;
+    public boolean Add,Sub,Div,Mul;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        public Button button0 , button1 , button2 , button3 , button4 , button5 , button6 ,
-                button7 , button8 , button9 , buttonAdd , buttonSub , buttonDivision ,
-                buttonMul , button10 , buttonC , buttonEqual ;
-        public EditText edt1;
-        public float mValueOne, mValueTwo;
-        public boolean Add,Sub,Div,Mul;
 
         button0 =(Button) findViewById(R.id.button0);
         button1 = (Button) findViewById(R.id.button1);
@@ -158,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                     Add=false;
             }
                 if(Sub==true) {
-                    edt1.setText(mValueOne - mValueOne + "");
+                    edt1.setText(mValueOne - mValueTwo + "");
                     Sub=false;
                 }
                 if(Mul==true){
