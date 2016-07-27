@@ -191,4 +191,13 @@
         android:layout_alignLeft="@+id/button10"
         android:layout_alignStart="@+id/button10" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="^"
+        android:id="@+id/buttonr"
+        android:layout_alignTop="@+id/button3"
+        android:layout_toStartOf="@+id/buttonsub" />
+
 </RelativeLayout>

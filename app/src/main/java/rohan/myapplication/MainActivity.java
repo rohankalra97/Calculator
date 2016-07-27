@@ -9,12 +9,12 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
 
-    public Button button0 , button1 , button2 , button3 , button4 , button5 , button6 ,
+    private Button button0 , button1 , button2 , button3 , button4 , button5 , button6 ,
             button7 , button8 , button9 , buttonAdd , buttonSub , buttonDivision ,
-            buttonMul , button10 , buttonC , buttonEqual ;
-    public EditText edt1;
-    public float mValueOne, mValueTwo;
-    public boolean Add,Sub,Div,Mul;
+            buttonMul , button10 , buttonC , buttonEqual ,buttonR ;
+    private EditText edt1;
+    private float mValueOne, mValueTwo,i;
+    private boolean Add,Sub,Div,Mul,exp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +38,10 @@ public class MainActivity extends AppCompatActivity {
         buttonC = (Button) findViewById(R.id.buttonC);
         buttonEqual = (Button) findViewById(R.id.buttoneql);
         edt1 = (EditText) findViewById(R.id.edt1);
+        buttonR= (Button) findViewById(R.id.buttonr);
         button0.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                edt1.setText("0");
+                edt1.setText(edt1.getText()+"0");
             }
         });
         button1.setOnClickListener(new View.OnClickListener() {
@@ -150,6 +151,14 @@ public class MainActivity extends AppCompatActivity {
                 edt1.setText(null);
             }
         });
+        buttonR.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mValueOne=Float.parseFloat(edt1.getText()+"");
+                exp=true;
+                edt1.setText(null);
+            }
+        }));
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,7 +178,16 @@ public class MainActivity extends AppCompatActivity {
                 if (Div==true) {
                     edt1.setText(mValueOne / mValueTwo + "");
                     Div = false;
-                }                }
+                }
+                if (exp==true){
+                    for (i=0;i<mValueTwo;i++) {
+                        mValueOne=mValueOne*mValueOne;
+                    }
+                    edt1.setText(mValueOne+"");
+                    exp=false;
+
+                }
+            }
         });
     }
 }
